@@ -1,4 +1,4 @@
-package main //graph
+package main //graphы
 
 import (
 	"fmt"
@@ -129,7 +129,7 @@ func (numbers Graph) DFSSearch(start, target int) {
 	}
 	path = append(path, start)
 	slices.Reverse(path)
-	fmt.Printf("The DFS non-recursion path is: %v", path)
+	fmt.Printf("The DFS non-recursion path is: %v\n", path)
 
 }
 
@@ -147,6 +147,7 @@ func (numbers Graph) BFSSearch(start, target int) {
 			if !visited[i] {
 				visited[i] = true
 				queue = append(queue, i)
+				parents[i] = current
 			}
 		}
 	}
@@ -162,7 +163,7 @@ func (numbers Graph) BFSSearch(start, target int) {
 	}
 	path = append(path, start)
 	slices.Reverse(path)
-	fmt.Printf("The BFS path is: %v", path)
+	fmt.Printf("The BFS path is: %v\n", path)
 }
 
 func main() {
@@ -185,5 +186,6 @@ func main() {
 	numbers.BFS(2)
 	numbers.DFS(4)
 	numbers.DFSSearch(1, 6)
+	numbers.BFSSearch(1, 6)
 
 }
