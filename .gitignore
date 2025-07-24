@@ -19,7 +19,6 @@
 
 # Build/cache
 /pkg/
-/bin/
 *.log
 
 # Dependency/Vendor
